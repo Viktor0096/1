@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Носки PRO — Качественные носки</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+        }
+
+        nav {
+            background: #222;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            background: #4CAF50;
+            border-radius: 5px;
+        }
+
+        .section {
+            display: none;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .product-image {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            margin-top: 20px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .whatsapp:hover {
+            background: #1ebe57;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Меню -->
+    <nav>
+        <a href="#" onclick="showSection('home')">Главная</a>
+        <a href="#" onclick="showSection('product')">О продукте</a>
+        <a href="#" onclick="showSection('reviews')">Отзывы</a>
+        <a href="#" onclick="showSection('contacts')">Контакты</a>
+    </nav>
+
+    <!-- Главная -->
+    <div id="home" class="section active">
+        <h1>Носки PRO</h1>
+        <img src="https://via.placeholder.com/200x200.png?text=НОСКИ" alt="Носки" class="product-image">
+        <p>Лучшие носки для вашего комфорта. Стиль, качество и удобство в каждой паре!</p>
+        <button onclick="showSection('product')">Подробнее</button>
+    </div>
+
+    <!-- О продукте -->
+    <div id="product" class="section">
+        <h1>О нашем продукте</h1>
+        <p>Наши носки произведены из 100% хлопка с добавлением эластана для максимального комфорта.</p>
+        <p>— Гипоаллергенные материалы<br>— Усиленные швы<br>— Дышащая ткань</p>
+        <button onclick="showSection('contacts')">Связаться с нами</button>
+    </div>
+
+    <!-- Отзывы -->
+    <div id="reviews" class="section">
+        <h1>Отзывы</h1>
+        <p>"Очень доволен покупкой! Носки удобные и качественные!" — Иван</p>
+        <p>"Лучшие носки, что я когда-либо носил." — Алексей</p>
+        <p>"Уже беру второй раз. Рекомендую!" — Мария</p>
+    </div>
+
+    <!-- Контакты -->
+    <div id="contacts" class="section">
+        <h1>Связаться с нами</h1>
+        <p>Оставьте заявку или напишите в WhatsApp!</p>
+        <form>
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Ваш телефон" required>
+            <textarea rows="4" placeholder="Ваше сообщение"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <a class="whatsapp" href="https://wa.me/79025553245" target="_blank">Написать в WhatsApp</a>
+    </div>
+
+    <footer>
+        © 2025 Носки PRO | Все права защищены
+    </footer>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
